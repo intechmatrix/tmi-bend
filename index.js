@@ -1,6 +1,7 @@
 import express, { json } from 'express';
 import cors from "cors";
 import bodyParser from "body-parser";
+import fileUpload from "express-fileupload";
 
 import { apiVersion, port, staticFolder } from "./config/config.js";
 import apiRouter from "./routes/index.js";
@@ -21,6 +22,7 @@ app.use(
 
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(json());
+app.use(fileUpload({ useTempFiles: true }));
 
 // API Routes
 app.use(`${apiVersion}`, apiRouter); // Example: /api/v1

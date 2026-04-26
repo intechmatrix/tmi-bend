@@ -4,6 +4,10 @@ import { contactController } from "../controller/index.js";
 
 const contactRouter = Router();
 
+contactRouter.route("/")
+    .get(contactController.viewAllContact)
+    .post(contactController.createContact);
+
 contactRouter.route("/create").post(contactController.createContact);
 
 contactRouter.route("/viewAll").get( contactController.viewAllContact);
