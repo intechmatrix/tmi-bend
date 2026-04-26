@@ -12,10 +12,26 @@ import { connectToDB, sequelize } from "./utils/database.js";
 const app = express();
 
 // CORS Configuration
+const allowedOrigins = [
+  "http://localhost:3000",
+  "http://localhost:3001",
+  "https://techmatrixinnovations.com",
+  "https://admin.techmatrixinnovations.com",
+  "https://api.techmatrixinnovations.com"
+];
+
 app.use(
   cors({
-    origin: "*",
-    methods: "GET, POST, PUT, PATCH, DELETE",
+    origin: function (origin, callback) {
+      // allow requests with no origin (like mobile apps or curl requests)
+      if (!origin) return callback(null, true);
+      if (allowedOrigins.indexOf(origin) !== -1 || origin.includes("techmatrixinnovations.com")) {
+        return callback(null, true);
+      } else {
+        return callback(null, true); // Still allow for now but ensure origin header is set
+      }
+    },
+    methods: "GET, POST, PUT, PATCH, DELETE, OPTIONS",
     credentials: true,
   })
 );
