@@ -11,12 +11,12 @@ const seedData = async () => {
     console.log("Database synced");
 
     // 1. Create Admin
-    const hashedPassword = await bcrypt.hash("admin123", 10);
+    const hashedPassword = await bcrypt.hash("Matrix_Secure_2026_!!_Admin", 10);
     await Admin.create({
-      email: "admin@techmatrix.com",
+      email: "techmatrix.admin@quantum.inc",
       password: hashedPassword
     });
-    console.log("Admin user created: admin@techmatrix.com / admin123");
+    console.log("Admin user created: techmatrix.admin@quantum.inc / Matrix_Secure_2026_!!_Admin");
 
     // 2. Seed Services
     const servicesData = [
