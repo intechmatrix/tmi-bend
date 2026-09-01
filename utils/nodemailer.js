@@ -4,61 +4,67 @@ config();
 
 
 const transporter = nodemailer.createTransport({
-  service: 'gmail', // Use your email provider
+  service: 'gmail',
   auth: {
-    user: process.env.EMAIL_USER, // Replace with your admin email
-    pass: process.env.EMAIL_PASS   // Use an app-specific password for Gmail
+    user: process.env.EMAIL_USER,
+    pass: process.env.EMAIL_PASS
   }
 });
 
-
 export const sendEmailToAdmin = async (type, data) => {
   try {
+    if (!process.env.EMAIL_USER || !process.env.EMAIL_PASS) {
+      console.warn('⚠️ [Nodemailer] EMAIL_USER or EMAIL_PASS is not configured in .env. Email notification skipped.');
+      return;
+    }
+
     let mailOptions;
 
     if (type === 'contact') {
+      mailOptions = {
+        from: `"Tech Matrix Innovations" <${process.env.EMAIL_USER}>`,
+        to: process.env.ADMIN_EMAIL || 'techmatrixinnovation@gmail.com',
+        replyTo: data.email,
+        subject: `New Project Inquiry / Contact: ${data.fullName}`,
+        text: `
+You have received a new contact / project brief submission.
 
-     mailOptions = {
-      from: data.email, // User's email
-      to: 'techmatrixinnovation@gmail.com', // Admin's email (Replace with your admin email)
-      subject: 'New Contact Form Submission',
-      text: `
-        You have received a new contact form submission.
+Full Name: ${data.fullName}
+Email: ${data.email}
+Phone Number: ${data.phoneNumber ? data.phoneNumber : 'Not Provided'}
+Institution/Organization: ${data.institution ? data.institution : 'Not Provided'}
+Discipline/Service: ${data.service ? data.service : 'Not Provided'}
+Estimated Budget: ${data.budget ? data.budget : 'Not Provided'}
+Message:
+${data.message ? data.message : 'No message'}
 
-        Full Name: ${data.fullName}
-  Email: ${data.email}
-  Phone Number: ${data.phoneNumber ? data.phoneNumber : 'Not Provided'}
-  Institution/Organization: ${data.institution ? data.institution : 'Not Provided'}
-  Message: ${data.message ? data.message : 'No message'}
+--------------------------------------------------
+Reply directly to this email to respond to ${data.fullName} (${data.email}).
+        `
+      };
+    } else if (type === 'subscription') {
+      mailOptions = {
+        from: `"Tech Matrix Innovations" <${process.env.EMAIL_USER}>`,
+        to: process.env.ADMIN_EMAIL || 'techmatrixinnovation@gmail.com',
+        replyTo: data.email,
+        subject: 'New Subscription Alert',
+        text: `
+A new user has subscribed.
 
-        
-        Please review this submission for further action.
-      `
-    };
-  }
+Email: ${data.email}
 
-  else if (type === 'subscription') {
-    mailOptions = {
-      from: process.env.EMAIL_USER, // Admin's email
-      to: 'himalbhattarai27@gmail.com', // Admin's email
-      subject: 'New Subscription Alert',
-      text: `
-        A new user has subscribed.
-
-        Email: ${data.email}
-
-        Please review and take necessary action.
-      `
-    };
-  } else {
-    throw new Error('Invalid email type specified');
-  }
+Please review and take necessary action.
+        `
+      };
+    } else {
+      throw new Error('Invalid email type specified');
+    }
 
     // Send email
-    await transporter.sendMail(mailOptions);
-    console.log('Email sent successfully!');
+    const info = await transporter.sendMail(mailOptions);
+    console.log('✅ Email sent successfully! MessageId:', info.messageId);
   } catch (error) {
-    console.error('Error sending email:', error.message);
+    console.error('❌ Error sending email:', error.message);
   }
 };
 

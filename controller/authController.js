@@ -2,12 +2,21 @@ import bcrypt from "bcryptjs";
 import jwt from "jsonwebtoken";
 import { Admin } from "../models/model.js";
 import { secretKey, expireIn } from "../config/config.js";
+import { dbIsConnected } from "../utils/database.js";
+import { jsonStore } from "../utils/jsonStore.js";
 
 export const login = async (req, res) => {
   const { email, password } = req.body;
 
   try {
-    const admin = await Admin.findOne({ where: { email, active: true } });
+    let admin = null;
+
+    if (!dbIsConnected) {
+      const admins = jsonStore.getAll("admin");
+      admin = admins.find(a => a.email === email && a.active === true);
+    } else {
+      admin = await Admin.findOne({ where: { email, active: true } });
+    }
 
     if (!admin) {
       return res.status(401).json({ message: "Invalid credentials" });

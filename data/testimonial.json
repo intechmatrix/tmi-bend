@@ -1,0 +1,20 @@
+[
+  {
+    "id": 1,
+    "name": "Abhishek Karki",
+    "role": "Managing Director",
+    "company": "Bhatbhateni Online",
+    "content": "Tech Matrix transformed our online ordering flow completely. Our page speed halved, and our checkout drop-offs reduced by 25%. A world-class technical partner here in Kathmandu.",
+    "avatar": "",
+    "active": true
+  },
+  {
+    "id": 2,
+    "name": "Prerna Thapa",
+    "role": "Co-Founder",
+    "company": "Vesper Digital",
+    "content": "Their high-end video ads and creative branding gave our social media campaigns an edge. The quality of output matches global creative standards.",
+    "avatar": "",
+    "active": true
+  }
+]

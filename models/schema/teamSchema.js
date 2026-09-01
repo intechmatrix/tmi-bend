@@ -1,42 +1,26 @@
 import { DataTypes } from "sequelize";
 
-
-
-const contactSchema = {
+const teamSchema = {
   id: {
     type: DataTypes.INTEGER,
     autoIncrement: true,
     allowNull: false,
     primaryKey: true,
   },
-  fullName: {
+  name: {
     type: DataTypes.STRING,
     allowNull: false,
   },
-  email: {
+  role: {
     type: DataTypes.STRING,
     allowNull: false,
   },
-  phoneNumber: {
+  image: {
     type: DataTypes.STRING,
     allowNull: true,
   },
-  
-  institution: {
-    type: DataTypes.STRING,
-    allowNull: true,
-  },
-  
-  message: {
-    type: DataTypes.TEXT,
-    allowNull: true,
-  },
-  service: {
-    type: DataTypes.STRING,
-    allowNull: true,
-  },
-  budget: {
-    type: DataTypes.STRING,
+  certs: {
+    type: DataTypes.STRING, // Comma separated certifications
     allowNull: true,
   },
   active: {
@@ -44,7 +28,6 @@ const contactSchema = {
     allowNull: false,
     defaultValue: true,
   },
-  
 };
 
-export default contactSchema;
+export default teamSchema;

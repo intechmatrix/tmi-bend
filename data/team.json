@@ -1,0 +1,26 @@
+[
+  {
+    "id": 1,
+    "name": "Saurav Sharma",
+    "role": "Founder & Lead Accountant",
+    "certs": "ACCA, Xero Advisor",
+    "image": "",
+    "active": true
+  },
+  {
+    "id": 2,
+    "name": "Pooja Karki",
+    "role": "Senior Bookkeeper",
+    "certs": "QB ProAdvisor",
+    "image": "",
+    "active": true
+  },
+  {
+    "id": 3,
+    "name": "Niranjan Shrestha",
+    "role": "Tax Associate",
+    "certs": "ACCA",
+    "image": "",
+    "active": true
+  }
+]

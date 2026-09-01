@@ -1,0 +1,19 @@
+version: '3.8'
+
+services:
+  backend:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: tmi-backend
+    restart: unless-stopped
+    ports:
+      - "3002:3002"
+    env_file:
+      - .env
+    environment:
+      - PORT=3002
+    volumes:
+      - ./data:/usr/src/app/data
+      - ./tmp:/usr/src/app/tmp
+      - ./public:/usr/src/app/public

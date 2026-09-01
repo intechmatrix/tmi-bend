@@ -5,7 +5,7 @@ import fileUpload from "express-fileupload";
 
 import { apiVersion, port, staticFolder } from "./config/config.js";
 import apiRouter from "./routes/index.js";
-import { connectToDB, sequelize } from "./utils/database.js";
+import { connectToDB, sequelize, dbIsConnected } from "./utils/database.js";
 
 
 // Create an instance of Express
@@ -46,27 +46,24 @@ app.use(`${apiVersion}`, apiRouter); // Example: /api/v1
 // Static files (like images, CSS, etc.)
 app.use(express.static(staticFolder));
 
-sequelize.sync();
-//sequelize.sync({ alter: true });
-  
-
-
   // Example API route
   app.get('/dashboard', (req, res) => {
     res.json({ message: 'Welcome to the dashboard' });
   });
 
-  // Root route (you can remove this or keep it for testing purposes)
-  // app.get('/', (req, res) => {
-  //   res.json({ message: 'Welcome to port 3002' });
-  // });
-
   // Start the server
   app.listen(port, async () => {
     console.log(`Server is running on port: ${port}`);
-     await connectToDB(); // Make sure DB is connected
+    await connectToDB(); // Make sure DB is connected
+    if (dbIsConnected) {
+      try {
+        await sequelize.sync({ alter: true });
+        console.log("Database models synchronized");
+      } catch (err) {
+        console.error("Database synchronization failed:", err);
+      }
+    }
   });
-;
 
 
 

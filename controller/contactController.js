@@ -13,13 +13,15 @@ export const createContact = async (req, res, next) => {
         phoneNumber,
         institution,
         message,
+        service,
+        budget,
         active,
       } = req.body;
   
-      if (!fullName || !email || !phoneNumber || !institution || !message) {
+      if (!fullName || !email) {
         return res
           .status(HttpStatus.BAD_REQUEST_400)
-          .json({ error: "Please provide all the required information" });
+          .json({ error: "Please provide both name and email" });
       }
   
       
@@ -29,7 +31,10 @@ export const createContact = async (req, res, next) => {
         fullName,
         email,
         phoneNumber,
-        institution, message,
+        institution,
+        message,
+        service,
+        budget,
         active,
          });
 

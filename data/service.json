@@ -1,0 +1,74 @@
+[
+  {
+    "id": 1,
+    "slug": "software-engineering",
+    "title": "Software & Application Development",
+    "description": "Custom Next.js and Node.js platforms. High-performance web applications, scalable SaaS architectures, and complex headless commerce ecosystems.",
+    "features": [
+      "Custom Next.js & React",
+      "High-Performance APIs",
+      "Scalable Multi-tenant SaaS",
+      "Payment Gateway Integration"
+    ],
+    "benefits": [
+      "Slick user experience",
+      "99.9% uptime architecture",
+      "Highly secure codebase"
+    ],
+    "active": true
+  },
+  {
+    "id": 2,
+    "slug": "creative-production",
+    "title": "Digital Marketing & Creative Production",
+    "description": "Cinematic commercial video ads, professional product photography, and brand identity design.",
+    "features": [
+      "Commercial Videos & Reels",
+      "Brand Identity Design",
+      "Product Photography",
+      "Social Media Creatives"
+    ],
+    "benefits": [
+      "Higher engagement rate",
+      "Unshakeable visual trust",
+      "Consistent cross-platform branding"
+    ],
+    "active": true
+  },
+  {
+    "id": 3,
+    "slug": "seo-optimization",
+    "title": "Search Engine Optimization",
+    "description": "Organic search dominance driven by semantic on-page layouts, technical audits, and link-building campaigns.",
+    "features": [
+      "Technical SEO Auditing",
+      "Semantic On-Page Content Silos",
+      "Digital PR & Backlinks",
+      "Keyword Search Mapping"
+    ],
+    "benefits": [
+      "Sustainable organic customer acquisition",
+      "Better Google SERP positioning",
+      "Optimized marketing ROI"
+    ],
+    "active": true
+  },
+  {
+    "id": 4,
+    "slug": "it-infrastructure",
+    "title": "IT Infrastructure & Hosting",
+    "description": "Managed business email, continuous cloud server architectures, containerized scaling, and downtime monitoring.",
+    "features": [
+      "AWS/GCP Cloud Management",
+      "Secure Business Email Hosting",
+      "DevOps & CI/CD automation",
+      "Vulnerability Security Audits"
+    ],
+    "benefits": [
+      "Unbreakable security compliance",
+      "Downtime reduced to zero",
+      "Auto-scaling server costs"
+    ],
+    "active": true
+  }
+]

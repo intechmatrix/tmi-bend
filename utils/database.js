@@ -22,13 +22,17 @@ const sequelize = new Sequelize(
   }
 );
 
+let dbIsConnected = false;
+
 const connectToDB = async () => {
   try {
     await sequelize.authenticate();
+    dbIsConnected = true;
     console.log("Successfully connected to Database");
   } catch (err) {
-    console.log(err);
+    dbIsConnected = false;
+    console.warn("Database connection failed. Falling back to local JSON data store.");
   }
 };
 
-export { sequelize, connectToDB };
+export { sequelize, connectToDB, dbIsConnected };

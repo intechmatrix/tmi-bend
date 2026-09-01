@@ -38,19 +38,19 @@ const seedData = async () => {
       },
       {
         slug: "digital-marketing-seo",
-        title: "Digital Marketing & SEO",
-        image: "/graphic.webp",
-        description: "Drive traffic and boost conversions with data-driven marketing strategies.",
-        features: ["On-Page SEO", "Content Strategy", "SEM"],
-        benefits: ["Organic visibility", "ROI growth"]
+        title: "Digital Marketing & Growth",
+        image: "/marketing.webp",
+        description: "Scale your business with full-funnel digital marketing combining SEO, PPC, and content strategy.",
+        features: ["SEO Optimization", "Google Search & Display Ads", "Conversion Optimization (CRO)"],
+        benefits: ["Sustainable organic search growth", "Higher conversion rates", "Optimized ROI"]
       },
       {
-        slug: "social-media-marketing",
-        title: "Social Media Marketing",
-        image: "/marketing.webp",
-        description: "Connect with your audience where they spend their time.",
-        features: ["Content Creation", "Paid Ads", "Engagement"],
-        benefits: ["Brand awareness", "Targeted growth"]
+        slug: "video-production-reels",
+        title: "Video Ads & Reels Production",
+        image: "/video-production.png",
+        description: "Engage your audience with professional video ads, TikToks, and Instagram Reels.",
+        features: ["Short-form Video Editing", "Commercial Video Ads", "Scriptwriting & Storyboarding", "Motion Graphics & VFX"],
+        benefits: ["Boost organic social reach", "Increase ad click-through rates (CTR)", "Stronger brand storytelling"]
       },
       {
         slug: "ecommerce-development",
@@ -77,12 +77,12 @@ const seedData = async () => {
         benefits: ["Satisfaction", "Reduced rework"]
       },
       {
-        slug: "it-consulting-support",
-        title: "IT Consulting & Support",
-        image: "/it-consulting.webp",
-        description: "Strategic IT advice and reliable support to keep your business running smoothly.",
-        features: ["Strategy", "Cloud Mgmt", "Cybersecurity"],
-        benefits: ["Minimized downtime", "Efficiency"]
+        slug: "graphic-design-branding",
+        title: "Graphic Design & Branding",
+        image: "/graphic.webp",
+        description: "Establish a striking visual identity with professional branding and social media assets.",
+        features: ["Brand Identity & Logo Design", "Social Media Creatives", "Pitch Deck Design", "Print & Packaging"],
+        benefits: ["Cohesive brand image", "Stand out in feeds", "Higher brand recall"]
       }
     ];
 

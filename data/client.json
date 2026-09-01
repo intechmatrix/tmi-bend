@@ -1,0 +1,52 @@
+[
+  {
+    "id": 1,
+    "name": "Bhatbhateni Group",
+    "logo": "",
+    "website": "https://bhatbhatenionline.com",
+    "active": true
+  },
+  {
+    "id": 2,
+    "name": "Nimbus Nepal",
+    "logo": "",
+    "website": "https://nimbusnepal.com",
+    "active": true
+  },
+  {
+    "id": 3,
+    "name": "Vesper Foods",
+    "logo": "",
+    "website": "https://vesperfoods.com.np",
+    "active": true
+  },
+  {
+    "id": 4,
+    "name": "Edulife",
+    "image": "https://res.cloudinary.com/dyeu3ytuy/image/upload/v1787566889/client/rajlqgthxg6aniigssda.jpg",
+    "logo": "https://res.cloudinary.com/dyeu3ytuy/image/upload/v1787566889/client/rajlqgthxg6aniigssda.jpg",
+    "active": true
+  },
+  {
+    "id": 5,
+    "name": "Kishan Venture",
+    "image": "https://res.cloudinary.com/dyeu3ytuy/image/upload/v1787567045/client/ah6glux6ouo6ui173dde.jpg",
+    "logo": "https://res.cloudinary.com/dyeu3ytuy/image/upload/v1787567045/client/ah6glux6ouo6ui173dde.jpg",
+    "active": true
+  },
+  {
+    "id": 6,
+    "name": "The Bengal",
+    "active": true
+  },
+  {
+    "id": 7,
+    "name": "CG Groups",
+    "active": true
+  },
+  {
+    "id": 8,
+    "name": "ROC Fitness",
+    "active": true
+  }
+]
