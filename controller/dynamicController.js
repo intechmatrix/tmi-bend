@@ -79,11 +79,12 @@ export const create = async (req, res) => {
     const payload = { ...req.body };
     
     if (req.files) {
-      const file = req.files.image || req.files.logo;
+      const file = req.files.image || req.files.logo || req.files.avatar;
       if (file) {
         const result = await uploadImage(file.tempFilePath, type);
         payload.image = result.secure_url;
         payload.logo = result.secure_url;
+        payload.avatar = result.secure_url;
       }
     }
 
@@ -116,11 +117,12 @@ export const update = async (req, res) => {
     const payload = { ...req.body };
 
     if (req.files) {
-      const file = req.files.image || req.files.logo;
+      const file = req.files.image || req.files.logo || req.files.avatar;
       if (file) {
         const result = await uploadImage(file.tempFilePath, type);
         payload.image = result.secure_url;
         payload.logo = result.secure_url;
+        payload.avatar = result.secure_url;
       }
     }
 

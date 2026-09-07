@@ -25,14 +25,14 @@
     "name": "Edulife",
     "image": "https://res.cloudinary.com/dyeu3ytuy/image/upload/v1787566889/client/rajlqgthxg6aniigssda.jpg",
     "logo": "https://res.cloudinary.com/dyeu3ytuy/image/upload/v1787566889/client/rajlqgthxg6aniigssda.jpg",
-    "active": true
+    "active": false
   },
   {
     "id": 5,
     "name": "Kishan Venture",
     "image": "https://res.cloudinary.com/dyeu3ytuy/image/upload/v1787567045/client/ah6glux6ouo6ui173dde.jpg",
     "logo": "https://res.cloudinary.com/dyeu3ytuy/image/upload/v1787567045/client/ah6glux6ouo6ui173dde.jpg",
-    "active": true
+    "active": false
   },
   {
     "id": 6,
@@ -47,6 +47,21 @@
   {
     "id": 8,
     "name": "ROC Fitness",
+    "active": true
+  },
+  {
+    "id": 9,
+    "name": "Edulife",
+    "image": "https://res.cloudinary.com/dyeu3ytuy/image/upload/v1788348356/client/rd2hoezbx4ldranji8vt.png",
+    "logo": "https://res.cloudinary.com/dyeu3ytuy/image/upload/v1788348356/client/rd2hoezbx4ldranji8vt.png",
+    "active": true,
+    "website": ""
+  },
+  {
+    "id": 10,
+    "name": "png",
+    "image": "https://res.cloudinary.com/dyeu3ytuy/image/upload/v1788348550/client/pd1i2desqgaualigjs8z.png",
+    "logo": "https://res.cloudinary.com/dyeu3ytuy/image/upload/v1788348550/client/pd1i2desqgaualigjs8z.png",
     "active": true
   }
 ]
